@@ -1,0 +1,10 @@
+muir.remulac.fr:443 {
+    root * /srv
+    file_server
+    tls /tls/certs/muir.remulac.fr.cert.pem /tls/private/muir.remulac.fr.key.pem
+}
+
+:80 {
+    root * /srv
+    file_server
+}

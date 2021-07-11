@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#	up -- bring up the given deployment
+#
+#		usage: up
+
+
+: ${DEPLOYMENT:=${PWD##*/}}
+export DEPLOYMENT
+
+command_dir="${0%/*}"
+
+. "${command_dir}/init"
+
+docker-compose up -d

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#	down -- bring down the given deployment
+#
+#		usage: down
+
+: ${DEPLOYMENT:=${PWD##*/}}
+export DEPLOYMENT
+
+command_dir="${0%/*}"
+
+. "${command_dir}/init"
+
+docker-compose down

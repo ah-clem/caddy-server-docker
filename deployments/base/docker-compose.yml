@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ${caddyfile}:/etc/caddy/Caddyfile:ro
+      - ${content_data}:/srv:ro
+      - ${certs_data}:/tls/certs:ro
+      - ${private_data}:/tls/private:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

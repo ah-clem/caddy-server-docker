@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#	init -- Initialize parameters for the given deployment
+#		Often sourced by other scripts prior to performing actions.
+#		Meant to be run from the deployment directory (deployments
+#		are named by their directory name).
+#
+#		usage: init
+#
+#		If not otherwise set in deployment init script,
+#		COMPOSE_PROJECT_NAME is set to value of DEPLOYMENT.
+
+: ${DEPLOYMENT:=${PWD##*/}}
+export DEPLOYMENT
+unset COMPOSE_PROJECT_NAME
+
+if [ -f "init_deployment.sh" ]
+then
+    . init_deployment.sh
+fi
+
+: ${COMPOSE_PROJECT_NAME:=$DEPLOYMENT}
+export COMPOSE_PROJECT_NAME
+
+echo COMPOSE_PROJECT_NAME $COMPOSE_PROJECT_NAME

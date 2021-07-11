@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#	config -- show the config for the given deployment
+#
+#		usage: config
+
+: ${DEPLOYMENT:=${PWD##*/}}
+export DEPLOYMENT
+
+command_dir="${0%/*}"
+
+. "${command_dir}/init"
+
+docker-compose config
