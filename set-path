@@ -1,0 +1,4 @@
+#	set-path -- source this file to add "bin" to the PATH
+
+PATH="$PATH:$(pwd)/bin"
+export PATH
