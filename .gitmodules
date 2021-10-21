@@ -1,4 +1,4 @@
 [submodule "deployments/noteworthy/public"]
 	path = deployments/noteworthy/public
 	url = ssh://git@gitolite.remulac.fr:2222/web-ci
-	branch = gh-pages
+	branch = stage-local
