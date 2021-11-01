@@ -2,3 +2,7 @@
 	path = deployments/noteworthy/public
 	url = ssh://git@gitolite.remulac.fr:2222/web-ci
 	branch = stage-local
+[submodule "deployments/sbb/public"]
+	path = deployments/sbb/public
+	url = ssh://git@gitolite.remulac.fr:2222/sbb-proto
+	branch = stage-local
